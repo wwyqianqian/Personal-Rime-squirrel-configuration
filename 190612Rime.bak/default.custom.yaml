@@ -1,0 +1,29 @@
+patch:
+  menu:
+    page_size: 8
+  schema_list:
+  - schema: luna_pinyin_simp      # 朙月拼音 简化字
+  - schema: luna_pinyin_tw
+  - schema: jyutping
+#  - schema: luna_pinyin           # 朙月拼音
+#  - schema: luna_pinyin_fluency   # 语句流
+#  - schema: double_pinyin         # 自然碼雙拼
+#  - schema: double_pinyin_flypy   # 小鹤雙拼
+#  - schema: double_pinyin_pyjj    # 拼音加加双拼
+#  - schema: wubi_pinyin           # 五笔拼音混合輸入
+
+  key_binder/bindings:  # 以方括号换页
+    - when: paging # [ -> 上一页
+      accept: bracketleft
+      send: Page_Up
+    - when: has_menu #] -下一页
+      accept: bracketright
+      send: Page_Down
+
+  ascii_composer/switch_key:
+    Caps_Lock: noop
+    Control_L: noop
+    Control_R: noop
+    Eisu_toggle: clear
+    Shift_L: commit_code # 配置后，可以直接用shift上屏英文字母,就是打了一段编码后直接以这段编码上屏
+    Shift_R: noop
